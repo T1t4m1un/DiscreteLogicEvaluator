@@ -4,6 +4,7 @@
 
 #include "parser/parser_def.h"
 
+#include <cstdint>
 #include <vector>
 #include <string>
 #include <iostream>
@@ -80,7 +81,7 @@ int main() {
 
     std::vector<char> truth_table(1 << varcnt);
 
-    for (u_int64_t i = 0; i < (1 << varcnt); i += 1) {
+    for (uint64_t i = 0; i < (1 << varcnt); i += 1) {
         std::cout << i << '\t' << "\x1b[2m";
         for (int k = 0; k < varcnt; k += 1) {
             (*exec_pack.id2val)[k] = ((i >> k) & 1);
